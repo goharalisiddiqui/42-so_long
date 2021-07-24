@@ -6,7 +6,7 @@
 /*   By: gsiddiqu <gsiddiqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 13:52:12 by gsiddiqu          #+#    #+#             */
-/*   Updated: 2021/07/24 19:44:10 by gsiddiqu         ###   ########.fr       */
+/*   Updated: 2021/07/24 20:52:54 by gsiddiqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	ft_buildelem(t_game *game, int i, int j)
 	{
 		game->player_pos.x = i;
 		game->player_pos.y = j;
-		elem = game->pl_r;
+		elem = game->pl_d;
 	}
 	else
 		return ;

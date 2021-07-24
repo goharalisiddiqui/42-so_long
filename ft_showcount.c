@@ -6,7 +6,7 @@
 /*   By: gsiddiqu <gsiddiqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 18:58:46 by gsiddiqu          #+#    #+#             */
-/*   Updated: 2021/07/24 20:07:37 by gsiddiqu         ###   ########.fr       */
+/*   Updated: 2021/07/24 20:49:30 by gsiddiqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ t_img	ft_checkcsize(t_game *game, t_img img_o, t_point *size_o)
 
 	if ((size_o->y) / 2 <= game->blocks[1][1].y)
 		return (img_o);
-	size_m.y = 2 * (game->blocks[1][1].x);
+	size_m.y = 2 * (game->blocks[1][1].y);
 	size_m.x = ft_fround(size_o->x, size_m.y, size_o->y);
 	img_m.img = mlx_new_image(game->mlx, size_m.x, size_m.y);
 	img_m.addr = mlx_get_data_addr(img_m.img, &img_m.bits_per_pixel,
