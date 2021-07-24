@@ -6,7 +6,7 @@
 /*   By: gsiddiqu <gsiddiqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 16:21:48 by gsiddiqu          #+#    #+#             */
-/*   Updated: 2021/07/24 20:15:11 by gsiddiqu         ###   ########.fr       */
+/*   Updated: 2021/07/24 20:32:22 by gsiddiqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@ int	ft_keyhook(int keycode, t_game *game)
 	return (1);
 }
 
+int	ft_destroyhook(t_game *game)
+{
+	ft_endgame(game);
+	return (1);
+}
+
 int	main(int argc, char **argv)
 {
 	t_game	game;
@@ -38,5 +44,6 @@ int	main(int argc, char **argv)
 	ft_initialize(&game, fd);
 	game.moves = 0;
 	mlx_hook(game.window, 2, 1L << 0, ft_keyhook, &game);
+	mlx_hook(game.window, 17, 1L << 0, ft_destroyhook, &game);
 	mlx_loop(game.mlx);
 }
