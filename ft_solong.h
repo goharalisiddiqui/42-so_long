@@ -6,7 +6,7 @@
 /*   By: gsiddiqu <gsiddiqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 17:38:19 by gsiddiqu          #+#    #+#             */
-/*   Updated: 2021/07/19 23:19:43 by gsiddiqu         ###   ########.fr       */
+/*   Updated: 2021/07/24 20:09:37 by gsiddiqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,22 @@
 
 typedef struct s_point
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 }	t_point;
+
+typedef struct s_nums
+{
+	int		w;
+	int		h;
+	void	**digits;
+}	t_nums;
 
 typedef struct s_map
 {
 	char	**grid;
 	int		width;
 	int		height;
-	
 }	t_map;
 
 typedef struct s_img
@@ -43,7 +49,6 @@ typedef struct s_img
 typedef struct s_game
 {
 	void	*mlx;
-	
 	void	*window;
 	void	*wall;
 	void	*gem;
@@ -58,9 +63,8 @@ typedef struct s_game
 	t_point	measures;
 	t_map	map;
 	t_point	**blocks;
+	t_nums	nums;
 }	t_game;
-
-
 
 void	ft_err(char *errstr);
 int		ft_fround(int mul, int num, int den);
@@ -75,7 +79,11 @@ void	ft_clearblock(t_game *game, t_point block);
 void	ft_mlx_pixel_put(t_img *data, int x, int y, int color);
 void	ft_movekeys(t_game *game, int keycode);
 void	ft_tryfinish(t_game *game, void (*f)(t_game *), int val);
+void	ft_initnums(t_game *game, char *path, t_nums *nums);
 void	ft_endgame(t_game *game);
+void	ft_showscore(t_game *game);
+void	ft_resize(t_img img_o, t_point img_o_size,
+			 t_img *img_m, t_point img_m_size);
 void	ft_opendoor(t_game *game);
 
 #endif

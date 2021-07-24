@@ -72,7 +72,7 @@ void *mlx_init()
   new_mlx->font = mlx_new_image(new_mlx, (FONT_WIDTH+2)*95, FONT_HEIGHT);
   i = 0;
   while (i < 4*(FONT_WIDTH+2)*95*FONT_HEIGHT)
-    {
+    { 
       new_mlx->font->buffer[i+0] = font_atlas.pixel_data[i+2];
       new_mlx->font->buffer[i+1] = font_atlas.pixel_data[i+1];
       new_mlx->font->buffer[i+2] = font_atlas.pixel_data[i+0];

@@ -6,7 +6,7 @@
 /*   By: gsiddiqu <gsiddiqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 20:51:13 by gsiddiqu          #+#    #+#             */
-/*   Updated: 2021/07/19 13:52:32 by gsiddiqu         ###   ########.fr       */
+/*   Updated: 2021/07/24 19:47:19 by gsiddiqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ static void	ft_griderr(t_map *map, char *str)
 
 static void	ft_checkgridpos(t_map *map, t_point iter, int *points)
 {
-	char c;
-	
+	char	c;
+
 	c = map->grid[iter.y][iter.x];
 	if (ft_strchr("01CEP", c) == NULL)
 		ft_griderr(map, "Invalid character in map");
@@ -46,9 +46,9 @@ static void	ft_checkgridsafety(t_map *map, t_point iter)
 	int		at_boundary;
 	char	**grid;
 
-	grid  = map->grid;
+	grid = map->grid;
 	if (grid[iter.y][iter.x] == '1')
-		return;
+		return ;
 	at_boundary = 0;
 	if (iter.y == 0 || iter.y == map->height - 1
 		 || iter.x == 0 || grid[iter.y][iter.x + 1] == '\0')
@@ -60,8 +60,11 @@ static void	ft_checkgridsafety(t_map *map, t_point iter)
 void	ft_checkmap(t_map *map)
 {
 	t_point	iter;
-	int		points[] = {0, 0, 0};
+	int		points[3];
 
+	points[0] = 0;
+	points[1] = 0;
+	points[2] = 0;
 	iter.y = 0;
 	while (iter.y < map->height)
 	{
@@ -80,7 +83,7 @@ void	ft_checkmap(t_map *map)
 
 int	ft_checkinput(int argc, char **argv)
 {
-	int fd;
+	int	fd;
 
 	if (argc == 2)
 	{

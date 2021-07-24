@@ -6,7 +6,7 @@
 #    By: gsiddiqu <gsiddiqu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/25 18:39:04 by gsiddiqu          #+#    #+#              #
-#    Updated: 2021/07/20 20:44:59 by gsiddiqu         ###   ########.fr        #
+#    Updated: 2021/07/24 20:15:25 by gsiddiqu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,8 @@ LIBFT = ./libft/libft.a
 
 MINILIBX = ./minilibx/libmlx.a
 
-SOURCES = ft_solong.c ft_utils.c ft_exitfuncs.c ft_initilize.c ft_readmap.c ft_checkmap.c ft_modfuncs.c\
-			ft_createimg.c ft_builder.c gnl/get_next_line.c gnl/get_next_line_utils.c
+SOURCES = ft_solong.c ft_exitfuncs.c ft_initilize.c ft_readmap.c ft_checkmap.c ft_modfuncs.c\
+			ft_createimg.c ft_builder.c ft_showcount.c gnl/get_next_line.c gnl/get_next_line_utils.c
 
 all: $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: gsiddiqu <gsiddiqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 13:52:12 by gsiddiqu          #+#    #+#             */
-/*   Updated: 2021/07/19 23:22:14 by gsiddiqu         ###   ########.fr       */
+/*   Updated: 2021/07/24 19:44:10 by gsiddiqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	ft_buildelem(t_game *game, int i, int j)
 {
 	char	id;
 	void	*elem;
-	
+
 	id = game->map.grid[j][i];
 	if (id == '1')
 		elem = game->wall;
@@ -31,16 +31,16 @@ static void	ft_buildelem(t_game *game, int i, int j)
 		elem = game->pl_r;
 	}
 	else
-		return;
+		return ;
 	mlx_put_image_to_window(game->mlx, game->window,
-			 elem, (game->blocks[j][i]).x, (game->blocks[j][i]).y);	
+		 elem, (game->blocks[j][i]).x, (game->blocks[j][i]).y);
 }
 
 void	ft_buildworld(t_game *game)
 {
 	int	i;
 	int	j;
-	
+
 	j = 0;
 	while (j < game->map.height)
 	{
