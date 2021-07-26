@@ -6,7 +6,7 @@
 /*   By: gsiddiqu <gsiddiqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 20:47:47 by gsiddiqu          #+#    #+#             */
-/*   Updated: 2021/07/24 19:50:43 by gsiddiqu         ###   ########.fr       */
+/*   Updated: 2021/07/26 20:45:49 by gsiddiqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ft_createimg(t_game *game, char *path, void **img)
 
 	img_m_size.x = game->measures.x / game->map.width;
 	img_m_size.y = game->measures.y / game->map.height;
-	img_o.img = mlx_png_file_to_image(game->mlx, path,
+	img_o.img = mlx_xpm_file_to_image(game->mlx, path,
 			 &(img_o_size.x), &(img_o_size.y));
 	img_o.addr = mlx_get_data_addr(img_o.img, &img_o.bits_per_pixel,
 			 &img_o.line_length, &img_o.endian);

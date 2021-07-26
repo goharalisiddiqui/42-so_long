@@ -6,7 +6,7 @@
 /*   By: gsiddiqu <gsiddiqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 13:51:49 by gsiddiqu          #+#    #+#             */
-/*   Updated: 2021/07/24 19:52:43 by gsiddiqu         ###   ########.fr       */
+/*   Updated: 2021/07/26 20:45:32 by gsiddiqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	ft_setwindow(t_game *game, char *bg_path)
 	t_point	*vals;
 
 	vals = &(game->measures);
-	game->bg.img = mlx_png_file_to_image(game->mlx, bg_path,
+	game->bg.img = mlx_xpm_file_to_image(game->mlx, bg_path,
 			 &(vals->x), &(vals->y));
 	game->bg.addr = mlx_get_data_addr(game->bg.img, &(game->bg.bits_per_pixel),
 			 &(game->bg.line_length), &(game->bg.endian));
@@ -53,15 +53,15 @@ void	ft_initialize(t_game *game, int fd)
 	ft_readmap(&game->map, fd);
 	ft_checkmap(&game->map);
 	game->mlx = mlx_init();
-	ft_setwindow(game, "./imgs/background.png");
+	ft_setwindow(game, "./imgs/background.xpm");
 	ft_initilizeblocks(game);
-	ft_createimg(game, "./imgs/walls.png", &(game->wall));
-	ft_createimg(game, "./imgs/gem.png", &(game->gem));
-	ft_createimg(game, "./imgs/doorclosed.png", &(game->exit));
-	ft_createimg(game, "./imgs/player_r.png", &(game->pl_r));
-	ft_createimg(game, "./imgs/player_l.png", &(game->pl_l));
-	ft_createimg(game, "./imgs/player_u.png", &(game->pl_u));
-	ft_createimg(game, "./imgs/player_d.png", &(game->pl_d));
-	ft_initnums(game, "./imgs/nums.png", &(game->nums));
+	ft_createimg(game, "./imgs/walls.xpm", &(game->wall));
+	ft_createimg(game, "./imgs/gem.xpm", &(game->gem));
+	ft_createimg(game, "./imgs/doorclosed.xpm", &(game->exit));
+	ft_createimg(game, "./imgs/player_r.xpm", &(game->pl_r));
+	ft_createimg(game, "./imgs/player_l.xpm", &(game->pl_l));
+	ft_createimg(game, "./imgs/player_u.xpm", &(game->pl_u));
+	ft_createimg(game, "./imgs/player_d.xpm", &(game->pl_d));
+	ft_initnums(game, "./imgs/nums.xpm", &(game->nums));
 	ft_buildworld(game);
 }

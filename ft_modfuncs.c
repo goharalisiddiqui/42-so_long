@@ -6,7 +6,7 @@
 /*   By: gsiddiqu <gsiddiqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 14:28:54 by gsiddiqu          #+#    #+#             */
-/*   Updated: 2021/07/24 20:02:36 by gsiddiqu         ###   ########.fr       */
+/*   Updated: 2021/07/26 20:46:13 by gsiddiqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_opendoor(t_game *game)
 	t_point	iter;
 
 	mlx_destroy_image(game->mlx, game->exit);
-	ft_createimg(game, "./imgs/dooropen.png", &(game->exit));
+	ft_createimg(game, "./imgs/dooropen.xpm", &(game->exit));
 	iter.x = 0;
 	iter.y = 0;
 	while (iter.y < game->map.height)

@@ -6,7 +6,7 @@
 /*   By: gsiddiqu <gsiddiqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 18:58:46 by gsiddiqu          #+#    #+#             */
-/*   Updated: 2021/07/24 20:49:30 by gsiddiqu         ###   ########.fr       */
+/*   Updated: 2021/07/26 20:45:40 by gsiddiqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	ft_initnums(t_game *game, char *path, t_nums *nums)
 	t_img	img;
 	int		ind;
 
-	img.img = mlx_png_file_to_image(game->mlx, path, &size.x, &size.y);
+	img.img = mlx_xpm_file_to_image(game->mlx, path, &size.x, &size.y);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel,
 			 &img.line_length, &img.endian);
 	img = ft_checkcsize(game, img, &size);
@@ -107,4 +107,6 @@ void	ft_showscore(t_game *game)
 		x_loc += game->nums.w;
 		score++;
 	}
+	score -= len;
+	free(score);
 }
