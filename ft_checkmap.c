@@ -6,7 +6,7 @@
 /*   By: gsiddiqu <gsiddiqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 20:51:13 by gsiddiqu          #+#    #+#             */
-/*   Updated: 2021/07/24 19:47:19 by gsiddiqu         ###   ########.fr       */
+/*   Updated: 2021/07/26 20:57:29 by gsiddiqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,10 @@ void	ft_checkmap(t_map *map)
 	}
 	if (points[2] == 0)
 		ft_griderr(map, "Zero collectables on the map");
+	if (points[0] == 0)
+		ft_griderr(map, "No player in the map");
+	if (points[1] == 0)
+		ft_griderr(map, "No exit in the map");
 }
 
 int	ft_checkinput(int argc, char **argv)
