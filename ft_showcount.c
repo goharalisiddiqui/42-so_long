@@ -6,7 +6,7 @@
 /*   By: gsiddiqu <gsiddiqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 18:58:46 by gsiddiqu          #+#    #+#             */
-/*   Updated: 2021/07/26 20:45:40 by gsiddiqu         ###   ########.fr       */
+/*   Updated: 2021/07/27 17:22:04 by gsiddiqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,14 +76,14 @@ void	ft_initnums(t_game *game, char *path, t_nums *nums)
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel,
 			 &img.line_length, &img.endian);
 	img = ft_checkcsize(game, img, &size);
-	game->nums.h = size.y / 2;
-	game->nums.w = size.x / 5;
-	game->nums.digits = malloc(10 * sizeof(void *));
+	nums->h = size.y / 2;
+	nums->w = size.x / 5;
+	nums->digits = malloc(10 * sizeof(void *));
 	ind = 0;
 	while (ind < 10)
 	{
-		game->nums.digits[ind] = ft_getnumimg(game, img,
-				 (ind % 5) * game->nums.w, (ind / 5) * game->nums.h);
+		nums->digits[ind] = ft_getnumimg(game, img,
+				 (ind % 5) * nums->w, (ind / 5) * nums->h);
 		ind++;
 	}
 	mlx_destroy_image(game->mlx, img.img);

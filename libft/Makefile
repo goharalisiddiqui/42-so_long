@@ -6,7 +6,7 @@
 #    By: gsiddiqu <gsiddiqu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/17 15:51:48 by gsiddiqu          #+#    #+#              #
-#    Updated: 2021/06/25 17:47:43 by gsiddiqu         ###   ########.fr        #
+#    Updated: 2021/07/27 17:16:21 by gsiddiqu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ $(OBJECTS_A): libft.h
 
 $(OBJECTS_B): libft.h $(OBJECTS_A)
 
-bonus : $(OBJECTS_BONUS) libft.a
+bonus : $(OBJECTS_BONUS) $(NAME)
 	ar rs $(NAME) $(OBJECTS_BONUS)
 
 $(OBJECTS_BONUS) : libft.h
