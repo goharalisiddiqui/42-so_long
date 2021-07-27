@@ -6,7 +6,7 @@
 /*   By: gsiddiqu <gsiddiqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 20:47:47 by gsiddiqu          #+#    #+#             */
-/*   Updated: 2021/07/27 21:03:11 by gsiddiqu         ###   ########.fr       */
+/*   Updated: 2021/07/27 21:55:50 by gsiddiqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_fround(int mul, int num, int den)
 	f = (float)mul;
 	f = f * num;
 	f = f / den;
-	if (f - (int)f > 0.5)
+	if (f - (int)f > 0.5 && (int)(f + 1) < num)
 		return ((int)(f + 1));
 	return ((int)f);
 }
@@ -31,11 +31,7 @@ static unsigned int	ft_getpixel(t_img wall, t_point iter,
 	char	*dst;
 
 	pos.x = ft_fround(iter.x, img_size.x, block_size.x);
-	if (pos.x >= img_size.x)
-		pos.x = img_size.x - 1;
 	pos.y = ft_fround(iter.y, img_size.y, block_size.y);
-	if (pos.y >= img_size.y)
-		pos.y = img_size.y - 1;
 	dst = wall.addr + (pos.y * wall.line_length + pos.x
 			 * (wall.bits_per_pixel / 8));
 	return (*(unsigned int *)dst);
