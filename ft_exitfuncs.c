@@ -6,7 +6,7 @@
 /*   By: gsiddiqu <gsiddiqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 13:52:20 by gsiddiqu          #+#    #+#             */
-/*   Updated: 2021/07/24 20:18:56 by gsiddiqu         ###   ########.fr       */
+/*   Updated: 2021/07/27 21:26:21 by gsiddiqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,7 @@ void	ft_freearrays(t_game *game)
 		free(game->blocks[i]);
 		i++;
 	}
-	i = 0;
-	while (i < 10)
-	{
-		mlx_destroy_image(game->mlx, game->nums.digits[i]);
-		i++;
-	}
+	ft_freenums(game);
 }
 
 void	ft_endgame(t_game *game)

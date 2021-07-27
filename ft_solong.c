@@ -6,13 +6,13 @@
 /*   By: gsiddiqu <gsiddiqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 16:21:48 by gsiddiqu          #+#    #+#             */
-/*   Updated: 2021/07/24 20:32:22 by gsiddiqu         ###   ########.fr       */
+/*   Updated: 2021/07/27 21:02:31 by gsiddiqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_solong.h"
 
-void	ft_mlx_pixel_put(t_img *data, int x, int y, int color)
+void	ft_mlx_pixel_put(t_img *data, int x, int y, unsigned int color)
 {
 	char	*dst;
 
